@@ -9,6 +9,7 @@ const PhotoList = props => {
     photos = results.map(photo => (
       <Photo
         url={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`}
+        key={photo.id}
       />
     ));
   } else {

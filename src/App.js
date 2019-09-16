@@ -9,8 +9,9 @@ import Photo from "./Components/Photo";
 import PhotoList from "./Components/PhotoList";
 import NotFound from "./Components/NotFound";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
-console.log(API_KEY);
+// Get working apiKey
+import apiKey from "./config";
+
 export default class App extends Component {
   constructor() {
     super();
@@ -28,7 +29,7 @@ export default class App extends Component {
   performSearch = (query = "jungle") => {
     axios
       .get(
-        `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=${query}&sort=relevance&safe_search=2&per_page=24&format=json&nojsoncallback=1`
+        `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&sort=relevance&safe_search=2&per_page=24&format=json&nojsoncallback=1`
       )
       .then(response => {
         this.setState({

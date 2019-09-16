@@ -1,7 +1,7 @@
 body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  color: #3f4850;
+  color: #304269;
 }
 
 h2 {
@@ -27,7 +27,7 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: #438bbd;
+  background-color: #91BED4;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
@@ -37,9 +37,9 @@ a {
 input {
   font-size: 1em;
   width: 100%;
-  background-color: #edeff0;
+  background-color: #D9E8F5;
   padding: 10px 15px;
-  border: 3px solid #d7dbdf;
+  border: 3px solid #91BED4;
   border-right: none;
   border-radius: 0.35em 0 0 0.35em;
   outline: none;
@@ -52,7 +52,7 @@ input {
 
 .main-nav a {
   display: block;
-  background: #438bbd;
+  background: #91BED4;
   border-radius: 3px;
   padding: 5px;
   color: #fff;
@@ -61,7 +61,7 @@ input {
 .main-nav .active,
 .main-nav a:hover,
 .search-form button:hover {
-  background-color: #275270;
+  background-color: #304269;
 }
 
 .photo-container ul {
@@ -117,7 +117,7 @@ input {
     display: flex;
     justify-content: center;
   }
-  
+
   .main-nav li {
     margin: 10px;
     width: 100px;

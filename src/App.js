@@ -5,9 +5,7 @@ import {BrowserRouter, Route, Redirect, Switch} from "react-router-dom";
 // Components
 import Search from "./Components/Search";
 import Nav from "./Components/Nav";
-import Photo from "./Components/Photo";
 import PhotoList from "./Components/PhotoList";
-import NotFound from "./Components/NotFound";
 import Error404 from "./Components/Error404";
 
 // Get working apiKey

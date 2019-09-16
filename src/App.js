@@ -6,6 +6,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Search from "./Components/Search";
 import Nav from "./Components/Nav";
 import Photo from "./Components/Photo";
+import PhotoList from "./Components/PhotoList";
 import NotFound from "./Components/NotFound";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -43,10 +44,7 @@ export default class App extends Component {
         <div className="container">
           <Search onSearch={this.performSearch} />
           <Nav />
-          <Switch>
-            <Route exact path="/" component={Photo} />
-            <Route component={NotFound} />
-          </Switch>
+          <PhotoList data={this.state.photos} />
         </div>
       </BrowserRouter>
     );

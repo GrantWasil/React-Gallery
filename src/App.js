@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import axios from "axios";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Route, Redirect} from "react-router-dom";
 
 // Components
 import Search from "./Components/Search";
@@ -47,10 +47,17 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">
-          <Route path="/:query" render={({match}) => {}} />
-          <Search onSearch={this.performSearch} />
+          <Redirect to="/search/jungle" />
+          <Route
+            path="/search/:query"
+            render={() => <Search onSearch={this.performSearch} />}
+          />
           <Nav />
-          <PhotoList data={this.state.photos} query={this.state.query} />
+          {this.state.loading ? (
+            <h2>Loading...</h2>
+          ) : (
+            <PhotoList data={this.state.photos} query={this.state.query} />
+          )}
         </div>
       </BrowserRouter>
     );

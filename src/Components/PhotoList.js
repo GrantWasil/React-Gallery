@@ -20,7 +20,7 @@ const PhotoList = props => {
 
   return (
     <div className="photo-container">
-      <h2>{query}</h2>
+      <h2>Results for: {query}</h2>
       <ul>{photos}</ul>
     </div>
   );

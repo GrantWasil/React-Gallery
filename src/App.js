@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import axios from "axios";
-import {BrowserRouter, Route, Redirect} from "react-router-dom";
+import {BrowserRouter, Route, Redirect, Switch} from "react-router-dom";
 
 // Components
 import Search from "./Components/Search";
@@ -8,6 +8,7 @@ import Nav from "./Components/Nav";
 import Photo from "./Components/Photo";
 import PhotoList from "./Components/PhotoList";
 import NotFound from "./Components/NotFound";
+import Error404 from "./Components/Error404";
 
 // Get working apiKey
 import apiKey from "./config";
@@ -48,11 +49,15 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">
-          <Redirect to="/search/jungle" />
-          <Route
-            path="/search/:query"
-            render={() => <Search onSearch={this.performSearch} />}
-          />
+          <Switch>
+            <Route exact path="/" render={() => <Redirect to="/jungle" />} />
+            <Route
+              exact
+              path="/:query"
+              render={() => <Search onSearch={this.performSearch} />}
+            />
+            <Route component={Error404} />
+          </Switch>
           <Nav />
           {this.state.loading ? (
             <h2>Loading...</h2>

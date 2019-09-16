@@ -7,7 +7,7 @@ const PhotoList = props => {
   let photos;
   let query;
   if (results.length > 0) {
-    query = props.query;
+    query = "Results for: " + props.query;
     photos = results.map(photo => (
       <Photo
         url={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`}
@@ -20,7 +20,7 @@ const PhotoList = props => {
 
   return (
     <div className="photo-container">
-      <h2>Results for: {query}</h2>
+      <h2>{query}</h2>
       <ul>{photos}</ul>
     </div>
   );

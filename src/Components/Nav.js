@@ -5,13 +5,13 @@ const Nav = () => (
   <nav className="main-nav">
     <ul>
       <li>
-        <NavLink to="/search/jungle">Jungle</NavLink>
+        <NavLink to="/jungle">Jungle</NavLink>
       </li>
       <li>
-        <NavLink to="/search/ocean">Ocean</NavLink>
+        <NavLink to="/ocean">Ocean</NavLink>
       </li>
       <li>
-        <NavLink to="/search/mountains">Mountains</NavLink>
+        <NavLink to="/mountains">Mountains</NavLink>
       </li>
     </ul>
   </nav>

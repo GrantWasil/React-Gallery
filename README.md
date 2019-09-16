@@ -2,7 +2,7 @@
 
 An application built using the [React](https://reactjs.org) library to render photos from [flickr](http://flickr.com) by using a search form.
 
-See my other work at my [Website](www.grantwasil.com)
+See my other work at my [Website](http://www.grantwasil.com)
 
 ## Motivation
 This was project seven of the TeamTreehouse Fullstack JavaScript tech-degree. I plan on using this technology to create a portfolio for a graphic artist.

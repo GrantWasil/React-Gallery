@@ -22,6 +22,7 @@ class Search extends Component {
       <form className="search-form" onSubmit={this.handleSubmit}>
         <input
           type="search"
+          onChange={this.onSearchChange}
           name="search"
           ref={input => (this.query = input)}
           placeholder="Search"

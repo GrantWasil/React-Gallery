@@ -21,10 +21,12 @@ export default class App extends Component {
     };
   }
 
+  // Run the application when the page loads
   componentDidMount() {
     this.performSearch();
   }
 
+  // Grabs data from flickr and returns an object with the photos
   performSearch = (query = "jungle") => {
     axios
       .get(
@@ -47,21 +49,36 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">
-          <Switch>
-            <Route exact path="/" render={() => <Redirect to="/jungle" />} />
-            <Route
-              exact
-              path="/:query"
-              render={() => <Search onSearch={this.performSearch} />}
-            />
-            <Route component={Error404} />
-          </Switch>
-          <Nav />
-          {this.state.loading ? (
-            <h2>Loading...</h2>
-          ) : (
-            <PhotoList data={this.state.photos} query={this.state.query} />
-          )}
+          <div>
+            <h1>Reach Photo App</h1>
+            <Search onSearch={this.performSearch} />
+            <Nav onSubmit={this.performSearch} />
+          </div>
+          <div>
+            {this.state.loading ? (
+              <h2>Loading...</h2>
+            ) : (
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={() => <Redirect to="/jungle" />}
+                />
+                <Route
+                  exact
+                  path="/:query"
+                  render={props => (
+                    <PhotoList
+                      {...props}
+                      data={this.state.photos}
+                      query={this.state.query}
+                    />
+                  )}
+                />
+                <Route component={Error404} />
+              </Switch>
+            )}
+          </div>
         </div>
       </BrowserRouter>
     );
